@@ -1,0 +1,45 @@
+.section-with-over {
+    position: relative;
+    background-image: url("pictures/訂閱底圖.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .section-with-over::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* 调整透明度 */
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 1;
+  }
+
+//在这个示例中，我们在 section-with-overlay 类中添加了一个 ::before 伪元素。这个伪元素充当一个覆盖层，覆盖了整个 section。 background-color: rgba(255, 255, 255, 0.6) 设置了覆盖层的颜色和透明度，你可以根据需要调整 rgba 值来控制透明度的强度。 content-container 类确保内部的内容相对于覆盖层显示在前面。
+
+//position: relative;：将容器定位为相对定位，以便其子元素（例如伪元素 ::before）可以相对于它定位。
+// background-image: url('...');：指定容器的背景图片。
+// background-size: cover;：确保背景图片完全覆盖容器，即使这意味着图片的一部分可能会被剪裁。
+// background-position: center;：将背景图片居中对齐，以确保图片的中心位于容器的中心。
+
+// content: "";：伪元素需要 content 属性来显示，即使它是一个空字符串。
+// position: absolute;：将伪元素定位为绝对定位，相对于父元素（即 section-with-overlay 容器）定位。
+// top: 0; 和 left: 0;：将伪元素放置在容器的左上角。
+// width: 100%; 和 height: 100%;：使伪元素覆盖整个容器。
+// background-color: rgba(255, 255, 255, 0.6);：为伪元素设置背景颜色和透明度。rgba 中的最后一个参数（0.6）表示 60% 的不透明度（或 40% 的透明度）。
+
+// position: relative;：保持相对定位，以便内容相对于其父元素定位。
+// z-index: 1;：将内容层提升到伪元素之上，以确保内容不会被伪元素覆盖。
+
+// ::before 和 ::after 都是 CSS 伪元素，用于向选定元素的内容前或后插入内容。在这个例子中，使用 ::before 或 ::after 都是可以的，因为它们的作用是相同的：插入一个覆盖层。然而，通常我们使用 ::before 来创建覆盖效果，因为它出现在内容之前，这使得思路更清晰，表示我们在内容之前插入了一个覆盖层。
+
+// 总结：
+
+// ::before：在元素的内容之前插入。
+// ::after：在元素的内容之后插入。
+// 在这种情况下，使用 ::before 是为了保持代码的一致性和可读性。

@@ -1,0 +1,17 @@
+.header{
+    height: 504px;
+    background-position: center center;
+    background-size: cover;
+    position:relative;
+    //&::after是子嵌套，要放在父嵌套裡面
+    &::after{
+        position:absolute;
+        content:"";
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-color: black;
+        opacity: 0.2; //透明度設定
+    }
+}
