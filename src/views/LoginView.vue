@@ -4,9 +4,9 @@
         <div class="col"></div>
         <div class="col-4">
           <img
-            src="../assets/訂閱圖.png"
+            :src="subscription"
             class="img-fluid"
-            alt="首頁畫面圖"
+            alt="登入畫面圖"
           />
         </div>
         <div class="col-3 my-auto">
@@ -65,6 +65,7 @@ import { defineRule } from 'vee-validate';
 import { required, email } from '@vee-validate/rules';
 import { validate } from 'vee-validate';
 import axios from 'axios';
+import subscription from '@/assets/訂閱圖.png';
 
 // 自定义密码验证规则
 const isPassword = (value: any) => {

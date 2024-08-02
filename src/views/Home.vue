@@ -26,7 +26,7 @@
                 </div>
             </div>
         </nav>
-        <header class="header" style="background-image: url(https://images.unsplash.com/photo-1568018508399-e53bc8babdde?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);">
+        <header class="header" :style="headerStyle">
             <div class="container d-flex align-items-center h-100 position-relative" style="z-index: 1;">
                 <div>
                     <h1 class="text-white">日式拉麵中<br>你無可挑剔的選擇</h1>
@@ -38,7 +38,7 @@
         <section class="container mt-6">
             <div class="row justify-content-center">
                 <div class="height-s5 col-md-5">
-                    <img class="height-s5 w-100 object-fit-cover" src="../assets/豚骨拉麵.png">
+                    <img class="height-s5 w-100 object-fit-cover" :src="ramensection">
                 </div>
                 <div class="col-md-5 d-flex align-items-center">
                     <div>
@@ -49,7 +49,7 @@
             </div>
             <div class="row justify-content-center mt-4 flex-row-reverse">
                 <div class="height-s5 col-md-5">
-                    <img class="height-s5 w-100 object-fit-cover" src="../assets/可樂餅2.jpg">
+                    <img class="height-s5 w-100 object-fit-cover" :src="colacookies">
                 </div>
                 <div class="col-md-5 d-flex align-items-center">
                     <div>
@@ -64,7 +64,7 @@
             <div class="container  content-container">
                 <div class="row justify-content-center">
                     <div class="col-md-4 text-center">
-                        <img src="../assets/訂閱圖.png" style="width: 296px;" class="img-fluid " alt="">
+                        <img :src="subscription" style="width: 296px;" class="img-fluid " alt="">
                     </div>
                     <div class="col-md-4 d-flex align-items-center" >
                         <div>
@@ -80,7 +80,7 @@
             <div class="row ">
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="../assets/日本拉麵篇_1.png" class="card-img-top height-s3 object-fit-cover" alt="...">
+                        <img :src="ramen1" class="card-img-top height-s3 object-fit-cover" alt="...">
                         <div class="card-body text-center">
                           <h5 class="card-title ">味噌拉麵套餐</h5>
                           <p class="card-text">(主餐+40元飲料+小菜一份)</p>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="../assets/日本拉麵篇_1.png" class="card-img-top height-s3 object-fit-cover" alt="...">
+                        <img :src="ramen1" class="card-img-top height-s3 object-fit-cover" alt="...">
                         <div class="card-body text-center">
                           <h5 class="card-title ">醬油拉麵套餐</h5>
                           <p class="card-text">(主餐+40元飲料+小菜一份)</p>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="../assets/日本拉麵篇_1.png" class="card-img-top height-s3 object-fit-cover" alt="...">
+                        <img :src="ramen1" class="card-img-top height-s3 object-fit-cover" alt="...">
                         <div class="card-body text-center">
                           <h5 class="card-title ">特製拉麵套餐</h5>
                           <p class="card-text">(主餐+40元飲料+小菜一份)</p>
@@ -138,7 +138,13 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
-
+import ramensection from '@/assets/豚骨拉麵.png';
+import colacookies from '@/assets/可樂餅2.jpg';
+import subscription from '@/assets/訂閱圖.png';
+import ramen1 from '@/assets/日本拉麵篇_1.png';
+const headerStyle = {
+  backgroundImage: 'url(https://images.unsplash.com/photo-1568018508399-e53bc8babdde?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'
+};
 const router = useRouter();
 
 const navigateToLogin = () => {
