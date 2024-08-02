@@ -21,3 +21,4 @@ EXPOSE 8080
 
 # 启动应用
 CMD ["npm", "run", "start-all"]
+

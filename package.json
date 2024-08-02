@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "start:json-server": "json-server --watch src/db/db.json --port 3000",
     "serve": "vue-cli-service serve",
-    "start": "node server.js", 
-    "start-all": "concurrently \"npm run start:json-server\" \"npm start\""  
+    "start": "node server.js",
+    "start-all": "concurrently \"npm run start:json-server\" \"npm start\""
   },
   "dependencies": {
     "@types/node": "^20.14.9",
@@ -19,7 +19,9 @@
     "@vee-validate/yup": "^4.13.1",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
+    "chalk": "^4.1.2",
     "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.0",
     "json-server": "^0.16.3",
     "pinia": "^2.1.7",
     "vee-validate": "^4.13.1",
@@ -29,10 +31,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
+    "concurrently": "^8.2.2",
     "sass": "^1.77.6",
     "typescript": "^5.2.2",
     "vite": "^5.3.1",
-    "vue-tsc": "^2.0.21",
-    "concurrently": "^8.2.2"
+    "vue-tsc": "^2.0.21"
   }
 }
