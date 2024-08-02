@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # 暴露端口
-EXPOSE 8081
+EXPOSE 8080
 
 # 启动应用
 CMD ["npm", "run", "start-all"]
