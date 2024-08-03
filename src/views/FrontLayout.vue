@@ -110,7 +110,8 @@ const handleFormSubmit = async () => {
   // 如果所有字段都有效，则提交表单
   if (validationResults.every(result => result.valid)) {
     try {
-      const res = await axios.post('http://localhost:3000/user', {
+                                //http://localhost:3000改成 /api 修正成可以佈署雲端
+      const res = await axios.post('/api/user', {
         username: username.value,
         useremail: useremail.value,
         userpassword: userpassword.value
