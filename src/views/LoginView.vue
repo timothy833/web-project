@@ -2,15 +2,15 @@
 <HomeNav />
 <div class="container">
   <div class="row pt-3">
-    <div class="col"></div>
-    <div class="col-4">
+    <div class="col-12 col-md"></div>
+    <div class="col-12 col-md-4 mb-3">
       <img
         :src="subscription"
         class="img-fluid"
         alt="登入畫面圖"
       />
     </div>
-    <div class="col-3 my-auto">
+    <div class="col-12 col-md-3 my-auto">
       <form id="form" ref="form" @submit.prevent="handleFormSubmit">
         <h1 class="mb-4 text-center">麵飽飽</h1>
         <p class="mb-4 fs-4 text-center">歡迎會員</p>
@@ -55,7 +55,7 @@
         <RouterLink to="/Front">返回註冊會員</RouterLink>
       </div>
     </div>
-    <div class="col"></div>
+    <div class="col-12 col-md"></div>
   </div>
 </div>
 </template>
