@@ -17,7 +17,7 @@
     </template>
     <script setup lang="ts">
     // import { defineProps, defineEmits } from 'vue'; 不用明確導入(減少報錯)
-    import { Product } from '../stores/types';
+    import { Product } from '~@/stores/types';
     import { ref } from 'vue';
     const props = defineProps<{product: Product}>(); // 定義接收的 props
     

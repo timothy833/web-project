@@ -15,7 +15,7 @@
     import ProductItem from './ProductItem.vue';
     import { CartItem, Product } from '../stores/types';
     import { useCartStore } from '../stores/index';
-    import ramen1 from '@/assets/日本拉麵篇_1.png';
+    import ramen1 from '~@/assets/日本拉麵篇_1.png';
     
     const products = ref<Product[]>([
             {id:1, name:'豚骨拉麵', price:150,image: ramen1, },

@@ -1,61 +1,62 @@
 <template>
-  <div class="container">
-    <div class="row pt-3">
-      <div class="col"></div>
-      <div class="col-4">
-        <img
-          :src="subscription"
-          class="img-fluid"
-          alt="登入畫面圖"
-        />
-      </div>
-      <div class="col-3 my-auto">
-        <form id="form" ref="form" @submit.prevent="handleFormSubmit">
-          <h1 class="mb-4 text-center">麵飽飽</h1>
-          <div class="mb-3">
-            <input
-              v-model="username"
-              type="text"
-              name="username"
-              placeholder="請輸入會員名稱"
-              class="form-control"
-              :class="{ 'is-invalid': errors.username }"
-            />
-            <span class="invalid-feedback" v-if="errors.useremail">請輸入正確名字</span>
-          </div>
-          <div class="mb-3">
-            <input
-              v-model="useremail"
-              type="text"
-              name="useremail"
-              placeholder="請輸入電子郵件"
-              class="form-control"
-              :class="{ 'is-invalid': errors.useremail }"
-            />
-            <span class="invalid-feedback" v-if="errors.useremail">請輸入正確email格式</span>
-          </div>
-          <div class="mb-4">
-            <input
-              v-model="userpassword"
-              type="password"
-              name="userpassword"
-              placeholder="請輸入密碼"
-              class="form-control"
-              :class="{ 'is-invalid': errors.userpassword }"
-            />
-            <span class="invalid-feedback" v-if="errors.userpassword">{{ errors.userpassword }}</span>
-          </div>
-          <button class="btn btn-lg btn-primary w-100" type="submit">
-            註冊
-          </button>
-        </form>
-        <div class="text-end login-buttom">
-          <RouterLink to="/login">已是會員，請按此登入</RouterLink>
-        </div>
-      </div>
-      <div class="col"></div>
+<HomeNav />
+<div class="container">
+  <div class="row pt-3">
+    <div class="col"></div>
+    <div class="col-4">
+      <img
+        :src="subscription"
+        class="img-fluid"
+        alt="登入畫面圖"
+      />
     </div>
+    <div class="col-3 my-auto">
+      <form id="form" ref="form" @submit.prevent="handleFormSubmit">
+        <h1 class="mb-4 text-center">麵飽飽</h1>
+        <div class="mb-3">
+          <input
+            v-model="username"
+            type="text"
+            name="username"
+            placeholder="請輸入會員名稱"
+            class="form-control"
+            :class="{ 'is-invalid': errors.username }"
+          />
+          <span class="invalid-feedback" v-if="errors.username">請輸入正確名字</span>
+        </div>
+        <div class="mb-3">
+          <input
+            v-model="useremail"
+            type="text"
+            name="useremail"
+            placeholder="請輸入電子郵件"
+            class="form-control"
+            :class="{ 'is-invalid': errors.useremail }"
+          />
+          <span class="invalid-feedback" v-if="errors.useremail">請輸入正確email格式</span>
+        </div>
+        <div class="mb-4">
+          <input
+            v-model="userpassword"
+            type="password"
+            name="userpassword"
+            placeholder="請輸入密碼"
+            class="form-control"
+            :class="{ 'is-invalid': errors.userpassword }"
+          />
+          <span class="invalid-feedback" v-if="errors.userpassword">密碼需含大小寫英文字母</span>
+        </div>
+        <button class="btn btn-lg btn-primary w-100" type="submit">
+          註冊
+        </button>
+      </form>
+      <div class="text-end login-buttom">
+        <RouterLink to="/Login">已是會員，請按此登入</RouterLink>
+      </div>
+    </div>
+    <div class="col"></div>
   </div>
+</div>
 </template>
 
 <script setup lang="ts">
@@ -64,11 +65,13 @@ import { defineRule } from 'vee-validate';
 import { required, email } from '@vee-validate/rules';
 import { validate } from 'vee-validate';
 import axios from 'axios';
-import subscription from '@/assets/訂閱圖.png'
+import subscription from '~@/assets/訂閱圖.png'
+import HomeNav from '~@/components/HomeNav.vue';
 // 自定义密码验证规则
-const isPassword = (value: any) => {
+const isPassword = (value: string) => {
   const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])/;
-  return passwordPattern.test(value) ? true : '密碼需含大小寫英文字母';
+  // const isValid = passwordPattern.test(value);
+  return passwordPattern.test(value) ? true : false;
 };
 
 // 定义验证规则
@@ -97,12 +100,14 @@ const handleFormSubmit = async () => {
     validate(useremail.value, rules.useremail),
     validate(userpassword.value, rules.userpassword)
   ]);
+  console.log('Validation Results:', validationResults); // 調試信息
+
 
   // 处理验证结果
   errors.value = {};
   validationResults.forEach((result, index) => {
+    const fieldName = ['username', 'useremail', 'userpassword'][index];
     if (!result.valid) {
-      const fieldName = ['username', 'useremail', 'userpassword'][index];
       errors.value[fieldName] = result.errors[0];
     }
   });

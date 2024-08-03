@@ -7,15 +7,16 @@ const router = createRouter({
     {
       path: '/',
       name:'Home',
-      component: () => import('../views/Home.vue'),},
-    { path: '/front',
+      component: () => import('~@/views/Home.vue'),
+    },
+    { path: '/Front',
       name:'FrontLayout',
-      component: () => import('../views/FrontLayout.vue'),
+      component: () => import('~@/views/FrontLayout.vue'),
       
     },
-    { path: '/login',
+    { path: '/Login',
       name:'LoginView',
-      component: () => import('../views/LoginView.vue'),
+      component: () => import('~@/views/LoginView.vue'),
       
     },
     // {
@@ -31,16 +32,16 @@ const router = createRouter({
     {
       path: '/Shop',
       name:'ShopNav',
-      component: () => import('../views/ShopNav.vue'),
+      component: () => import('~@/views/ShopNav.vue'),
       children:[{
           path: 'List',
           name:'ShopList',
-          component: () => import('../views/ShopList.vue'),
+          component: () => import('~@/views/ShopList.vue'),
 
         },{ 
           path: 'Cart',
           name:'Cart',
-          component: () => import('../views/Cart.vue'),
+          component: () => import('~@/views/Cart.vue'),
         },],
     },
   ]
