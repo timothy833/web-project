@@ -1,7 +1,14 @@
 <template>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">麵飽飽</a>
+        <RouterLink class="navbar-brand" to="/">
+            <img
+                :src="Logo"
+                alt="麵飽飽"
+                class="d-inline-block align-text-top"
+                style="width: 50px"
+            />
+        </RouterLink>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,6 +36,7 @@
 </template>
 
 <script setup lang="ts">
+import Logo from '~@/assets/logo.png';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
