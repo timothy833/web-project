@@ -52,7 +52,7 @@
         </button>
       </form>
       <div class="text-end login-buttom mt-2">
-        <RouterLink to="/Front">返回註冊會員</RouterLink>
+        <router-link to="/Front">返回註冊會員</router-link>
       </div>
     </div>
     <div class="col-12 col-md"></div>
@@ -66,8 +66,8 @@ import { defineRule } from 'vee-validate';
 import { required, email } from '@vee-validate/rules';
 import { validate } from 'vee-validate';
 import axios from 'axios';
-import subscription from '~@/assets/訂閱圖.png';
-import HomeNav from '~@/components/HomeNav.vue';
+import subscription from '@/assets/訂閱圖.png';
+import HomeNav from '@/components/HomeNav.vue';
 
 // 自定义密码验证规则
 const isPassword = (value: any) => {

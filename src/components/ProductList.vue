@@ -12,13 +12,13 @@
     
     <script setup lang="ts">
     import { ref } from 'vue';
-    import ProductItem from './ProductItem.vue';
-    import { CartItem, Product } from '../stores/types';
-    import { useCartStore } from '../stores/index';
-    import ramen1 from '~@/assets/日本拉麵篇_1.png';
+    import ProductItem from '@/components/ProductItem.vue';
+    import { CartItem, Product } from '@/stores/types';
+    import { useCartStore } from '@/stores/index';
+    import ramen1 from '@/assets/日本拉麵篇_1.png';
     
     const products = ref<Product[]>([
-            {id:1, name:'豚骨拉麵', price:150,image: ramen1, },
+            {id:1, name:'味噌拉麵', price:150,image: ramen1, },
             {id:2, name:'醬油拉麵', price:130,image: ramen1, },
             {id:3, name:'咖哩拉麵', price:160,image: ramen1, },
             {id:4, name:'特製拉麵', price:220,image: ramen1, },

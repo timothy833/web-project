@@ -1,5 +1,9 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-
+import { createRouter, createWebHashHistory } from 'vue-router';
+import Home from '@/views/Home.vue';
+import FrontLayout from '@/views/FrontLayout.vue';
+import LoginView from '@/views/LoginView.vue';
+import Shop from '@/views/Shop.vue';
+import Cart from '@/views/Cart.vue';
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -7,43 +11,28 @@ const router = createRouter({
     {
       path: '/',
       name:'Home',
-      component: () => import('~@/views/Home.vue'),
+      component: Home,
     },
     { path: '/Front',
       name:'FrontLayout',
-      component: () => import('~@/views/FrontLayout.vue'),
+      component: FrontLayout,
       
     },
     { path: '/Login',
       name:'LoginView',
-      component: () => import('~@/views/LoginView.vue'),
+      component: LoginView,
       
     },
-    // {
-    //   path: '/Cart',
-    //   name:'Cart',
-    //   component: () => import('../views/Cart.vue'),
-    // },
-    // {
-    //   path: '/ShopList',
-    //   name:'ShopList',
-    //   component: () => import('../views/ShopList.vue'),
-    // },
     {
       path: '/Shop',
-      name:'ShopNav',
-      component: () => import('~@/views/ShopNav.vue'),
-      children:[{
-          path: 'List',
-          name:'ShopList',
-          component: () => import('~@/views/ShopList.vue'),
-
-        },{ 
-          path: 'Cart',
-          name:'Cart',
-          component: () => import('~@/views/Cart.vue'),
-        },],
+      name:'Shop',
+      component: Shop,    
     },
+    {
+      path: '/Cart',
+      name:'Cart',
+      component: Cart,
+    }
   ]
 })
 

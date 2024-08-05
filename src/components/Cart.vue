@@ -11,9 +11,11 @@
         <div v-for="item in cartItems" :key="item.id" class="list-group-item">
             <div class="d-flex justify-content-between align-items-center">
                 <!-- 選中商品的多選框 -->
-                <input type="checkbox" v-model="selectedItems[item.id]" />
+                <div class="form-check d-inline-block me-3">
+                    <input type="checkbox" v-model="selectedItems[item.id]" class="form-check-input shadow-sm border-primary" />
+                </div>
                 <!-- 商品圖片 -->
-                <img :src="item.image" class="img-thumbnail" style="max-width: 100px;" />
+                <img :src="item.image" class="img-cover me-3" style="max-width: 100px;" />
                 <div>
                     <!-- 商品名稱 -->
                     <h5>{{ item.name }}</h5>
@@ -39,7 +41,7 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-import { useCartStore } from '~@/stores';
+import { useCartStore } from '@/stores';
 
 const cartStore = useCartStore();
 
@@ -61,3 +63,19 @@ const checkout = () => {
 
 
 </script>
+
+<style lang="scss" scoped>
+$border-color: black !default;
+
+.form-check-input.border-primary {
+  border-color: $border-color !important;
+}
+
+.img-cover{
+    width: 100px;
+    left: 100px;
+    object-fit: cover;
+    border-radius: 5%;
+}
+
+</style>

@@ -1,14 +1,14 @@
 <template>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <RouterLink class="navbar-brand" to="/">
+        <router-link class="navbar-brand" to="/">
             <img
                 :src="Logo"
                 alt="麵飽飽"
                 class="d-inline-block align-text-top"
                 style="width: 50px"
             />
-        </RouterLink>
+        </router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,10 +21,10 @@
                     <a class="nav-link" href="#">Features</a>
                 </li> -->
                 <li class="nav-item">
-                    <RouterLink class="nav-link" to="/">關於</RouterLink>
+                    <router-link class="nav-link" to="/">關於</router-link>
                 </li>
                 <li class="nav-item">
-                    <RouterLink class="nav-link" to="/Shop">餐點</RouterLink>
+                    <router-link class="nav-link" to="/Shop">餐點</router-link>
                 </li>
                 <li>
                     <button type="button" class="btn btn-primary"  @click="navigateToLogin">登入</button>
@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import Logo from '~@/assets/logo.png';
+import Logo from '@/assets/logo.png';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();

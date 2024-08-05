@@ -14,21 +14,22 @@
             </div>
         </div>
     </div>
-    </template>
-    <script setup lang="ts">
-    // import { defineProps, defineEmits } from 'vue'; 不用明確導入(減少報錯)
-    import { Product } from '~@/stores/types';
-    import { ref } from 'vue';
-    const props = defineProps<{product: Product}>(); // 定義接收的 props
-    
-    const emits = defineEmits(['add-to-cart']); // 定義發出的事件
-    const quantity = ref(1);  // 商品購買數量  quantity數量
-    
-    const addToCart = () => {
-        emits('add-to-cart',{ ...props.product, quantity: quantity.value });  // 點擊按鈕時發出事件
-    };
-    
-    </script>
-    <style scoped>
+</template>
+<script setup lang="ts">
+// import { defineProps, defineEmits } from 'vue'; 不用明確導入(減少報錯)
+import { Product } from '@/stores/types';
+import { ref } from 'vue';
+const props = defineProps<{product: Product}>(); // 定義接收的 props
+
+const emits = defineEmits(['add-to-cart']); // 定義發出的事件
+const quantity = ref(1);  // 商品購買數量  quantity數量
+
+const addToCart = () => {
+    emits('add-to-cart',{ ...props.product, quantity: quantity.value });  // 點擊按鈕時發出事件
+    alert(`成功加入購物車`);
+};
+
+</script>
+<style scoped>
     
     </style>

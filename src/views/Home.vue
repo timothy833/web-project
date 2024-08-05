@@ -5,7 +5,7 @@
         <div>
             <h1 class="text-white">日式拉麵中<br>你無可挑剔的選擇</h1>
             <button class="btn btn-primary btn-lg co1-4 w-100" type="button">
-                <RouterLink class="nav-link" to="/Shop">點餐</RouterLink>
+                <router-link class="nav-link" to="/Shop">點餐</router-link>
             </button>                            
         </div>
     </div>    
@@ -67,7 +67,7 @@
                     <li class="list-group-item text-center">雞肉味噌拉麵</li>
                 </ul>
                 <button type="button" class="btn-primary btn w-100">
-                    <RouterLink class="nav-link" to="/Shop">點餐</RouterLink>
+                    <router-link class="nav-link" to="/Shop">點餐</router-link>
                 </button>
             </div>
         </div>
@@ -85,7 +85,7 @@
                     <li class="list-group-item text-center">雞肉醬油拉麵</li>
                 </ul>
                 <button type="button" class="btn-primary btn w-100">
-                    <RouterLink class="nav-link" to="/Shop">點餐</RouterLink>
+                    <router-link class="nav-link" to="/Shop">點餐</router-link>
                 </button>
             </div>
         </div>
@@ -104,7 +104,7 @@
                     <li class="list-group-item text-center">牛肉咖哩拉麵</li>
                 </ul>
                 <button type="button" class="btn-primary btn w-100">
-                    <RouterLink class="nav-link" to="/Shop">點餐</RouterLink>
+                    <router-link class="nav-link" to="/Shop">點餐</router-link>
                 </button>
             </div>
         </div>
@@ -122,11 +122,11 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
-import ramensection from '~@/assets/豚骨拉麵.png';
-import colacookies from '~@/assets/可樂餅2.jpg';
-import subscription from '~@/assets/訂閱圖.png';
-import ramen1 from '~@/assets/日本拉麵篇_1.png';
-import HomeNav from '~@/components/HomeNav.vue';
+import ramensection from '@/assets/豚骨拉麵.png';
+import colacookies from '@/assets/可樂餅2.jpg';
+import subscription from '@/assets/訂閱圖.png';
+import ramen1 from '@/assets/日本拉麵篇_1.png';
+import HomeNav from '@/components/HomeNav.vue';
 const headerStyle = {
   backgroundImage: 'url(https://images.unsplash.com/photo-1568018508399-e53bc8babdde?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)'
 };
