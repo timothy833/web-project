@@ -27,7 +27,7 @@
                     <input type="number" class="form-control" v-model="item.quantity" min="1" />
                 </div>
                 <!-- 移除商品按鈕 -->
-                <button class="btn btn-danger" @click="removeItem(item.id)">x</button>
+                <button type="button" class="btn btn-danger" @click="removeItem(item.id)">x</button>
             </div>
         </div>
     </div>

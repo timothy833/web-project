@@ -10,13 +10,12 @@
             <div class="input-group mb-3">
                 <!-- 購買數量輸入框和加入購物車按鈕 -->
                 <input type="number" class="form-control" v-model="quantity" min="1" />
-                <button class="btn btn-primary" @click="addToCart">加入購物車</button>
+                <button  type="button" class="btn btn-primary" @click="addToCart">加入購物車</button>
             </div>
         </div>
     </div>
 </template>
 <script setup lang="ts">
-// import { defineProps, defineEmits } from 'vue'; 不用明確導入(減少報錯)
 import { Product } from '@/stores/types';
 import { ref } from 'vue';
 const props = defineProps<{product: Product}>(); // 定義接收的 props
@@ -32,4 +31,4 @@ const addToCart = () => {
 </script>
 <style scoped>
     
-    </style>
+</style>

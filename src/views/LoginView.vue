@@ -11,7 +11,7 @@
       />
     </div>
     <div class="col-12 col-md-3 my-auto">
-      <form id="form" ref="form" @submit.prevent="handleFormSubmit">
+      <form id="form" ref="form" @submit="handleFormSubmit">
         <h1 class="mb-4 text-center">麵飽飽</h1>
         <p class="mb-4 fs-4 text-center">歡迎會員</p>
         <div class="mb-3">
@@ -47,7 +47,7 @@
           />
           <span class="invalid-feedback" v-if="errors.userpassword">請輸入正確密碼</span>
         </div>
-        <button class="btn btn-lg btn-primary w-100" type="submit">
+        <button class="btn btn-lg btn-primary w-100" type="button">
             登入
         </button>
       </form>

@@ -5,14 +5,14 @@
     <!-- 使用 Bootstrap 的容器類，橫跨整個屏幕寬度。 -->
     <div class="container-fluid">
         <!-- 設置導航欄品牌名稱。 -->
-        <RouterLink class="navbar-brand" to="/">
+        <router-link class="navbar-brand" to="/">
         <img
             :src="Logo"
             alt="麵飽飽"
             class="d-inline-block align-text-top"
             style="width: 50px"
             />
-        </RouterLink>
+        </router-link>
         <router-link class="nav-link" to="/Shop">商品列表</router-link>
         <!-- 導航欄折疊按鈕，當屏幕尺寸較小時顯示。 -->
         <button
