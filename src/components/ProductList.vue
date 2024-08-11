@@ -15,7 +15,7 @@
     import ProductItem from '@/components/ProductItem.vue';
     import { CartItem, Product } from '@/stores/types';
     import { useCartStore } from '@/stores/index';
-    import ramen1 from '@/assets/日本拉麵篇_1.png';
+    import ramen1 from '@/assets/ramen1.png';
     
     const products = ref<Product[]>([
             {id:1, name:'味噌拉麵', price:150,image: ramen1, },
@@ -28,6 +28,7 @@
     
     const addToCart1 = (product: CartItem) => {
         store.addToCart(product);  // 處理添加到購物車事件
+        localStorage.setItem('cart', JSON.stringify(store.cart)) // 更新 localStorage
     };
     
     </script>

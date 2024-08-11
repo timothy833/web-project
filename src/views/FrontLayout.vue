@@ -65,7 +65,7 @@ import { defineRule } from 'vee-validate';
 import { required, email } from '@vee-validate/rules';
 import { validate } from 'vee-validate';
 import axios from 'axios';
-import subscription from '@/assets/訂閱圖.png'
+import subscription from '@/assets/subscription.png'
 import HomeNav from '@/components/HomeNav.vue';
 // 自定义密码验证规则
 const isPassword = (value: string) => {

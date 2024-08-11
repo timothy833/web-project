@@ -34,7 +34,11 @@
             <router-link class="nav-link" to="/Shop">商品列表</router-link>
             </li> -->
             <li class="nav-item">
-            <router-link class="nav-link" to="/Cart">購物車</router-link>
+                <router-link class="nav-link" to="/Cart">
+                    購物車
+                    <!-- 添加购物车数量小红点 -->
+                    <span v-if="cartItemCount > 0" class="badge bg-danger ms-2">{{ cartItemCount }}</span>
+                </router-link>
             </li>
         </ul>
         </div>
@@ -45,8 +49,12 @@
     
     
 <script setup lang="ts">
-
+import { computed } from 'vue';
+import { useCartStore } from '@/stores';
 import Logo from '@/assets/logo.png';
+
+const cartStore = useCartStore();
+const cartItemCount = computed(() => cartStore.totalQuantity);
 
 </script>
 
