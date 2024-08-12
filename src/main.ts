@@ -10,12 +10,19 @@ import * as AllRules from '@vee-validate/rules';
 import { localize, setLocale } from '@vee-validate/i18n';
 // 引入 Vee Validate 繁體中文語系檔
 import zhTW from '@vee-validate/i18n/dist/locale/zh_TW.json';
+
+// Font Awesome
+import { library } from '@fortawesome/fontawesome-svg-core' 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons' // solid icons
+
 import router from '../src/router';
 import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import App from './App.vue';
 
-
+//將fas（即 Font Awesome 的所有 Solid 圖標）添加到應用程序的圖標庫中。
+library.add(fas);
 // Vee Validate 表單驗證語法開始
 // 定義規則（加入全部規則）
 Object.keys(AllRules).forEach((rule) => {
@@ -40,6 +47,7 @@ app.use(createPinia());
 app.component('VForm', Form);
 app.component('VField', Field);
 app.component('ErrorMessage', ErrorMessage);
+app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(router);
 app.use(VueAxios,axios);
 app.mount('#app');

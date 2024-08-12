@@ -59,13 +59,7 @@ const selectedTotalPrice = computed(() => cartStore.selectedTotalPrice(selectedI
 
 // 初始化時從 localStorage 加載數據
 onMounted(() => {
-    const storedCart = localStorage.getItem('cart');
-    if(storedCart) {
-        cartStore.setCart(JSON.parse(storedCart));
-    }
-    else {
-        console.log('No cart data found in localStorage');
-    }
+    cartStore.loadCartFromLocalStorage();
 });
 
 // 監聽 cartItems 的變化，並更新 localStorage

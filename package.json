@@ -12,6 +12,9 @@
     "start-all": "concurrently \"npm run start:json-server\" \"npm start\""
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "@types/node": "^20.14.9",
     "@vee-validate/i18n": "^4.13.1",
     "@vee-validate/rules": "^4.13.1",

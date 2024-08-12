@@ -3,7 +3,7 @@
 <div>
     <div class="container mt-4">
         <!-- 顯示購物車標題 -->
-        <h1>購物車</h1>
+        <!-- <h3>購物車<font-awesome-icon :icon="['fas', 'cart-shopping']" /></h3> -->
         <!-- 引入購物車組件 -->
         <Cart />
     </div>

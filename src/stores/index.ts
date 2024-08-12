@@ -6,6 +6,15 @@ export const useCartStore = defineStore('cart', {
     cart: [] as CartItem[]
   }),
   actions: {
+     // 新增 loadCartFromLocalStorage 方法 
+    //  確保在页面加载时從 localStorage 正确初始化購物車数據
+    loadCartFromLocalStorage(){
+      const storedCart = localStorage.getItem('cart');
+      if(storedCart){
+        this.cart = JSON.parse(storedCart);
+      }
+    },
+
     //新增setCart方法處理 localStorage儲存資料
     setCart(cartItems: CartItem[]) { 
       this.cart = cartItems;
@@ -13,6 +22,8 @@ export const useCartStore = defineStore('cart', {
     clearCart() {
       this.cart = [];
     },
+
+
     addToCart(product: CartItem) {
       const existingItem = this.cart.find(item => item.id === product.id);
       if (existingItem) {
