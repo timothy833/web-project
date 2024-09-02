@@ -1,7 +1,7 @@
 <template>
     <div class="card mb-4">
         <!-- 商品圖片 -->
-        <img :src="product.image" class="card-img-top" :alt="product.name">
+        <img :src="product.image" class="card-img-top img-cover" :alt="product.name">
         <div class="card-body">
             <!-- 商品名稱 -->
             <h5 class="card-title">{{ product.name }}</h5>
@@ -30,5 +30,8 @@ const addToCart = () => {
 
 </script>
 <style scoped>
-    
+.img-cover {
+    height: 200px; /* 固定圖片高度 */
+    object-fit: cover; /* 確保圖片按比例縮放 */
+}
 </style>

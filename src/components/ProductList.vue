@@ -16,12 +16,15 @@
     import { CartItem, Product } from '@/stores/types';
     import { useCartStore } from '@/stores/index';
     import ramen1 from '@/assets/ramen1.png';
+    import ramen2 from '@/assets/ramen2.webp';
+    import ramen3 from '@/assets/ramen3.webp';
+    import ramen4 from '@/assets/ramen4.webp';
     
     const products = ref<Product[]>([
             {id:1, name:'味噌拉麵', price:150,image: ramen1, },
-            {id:2, name:'醬油拉麵', price:130,image: ramen1, },
-            {id:3, name:'咖哩拉麵', price:160,image: ramen1, },
-            {id:4, name:'特製拉麵', price:220,image: ramen1, },
+            {id:2, name:'醬油拉麵', price:130,image: ramen2, },
+            {id:3, name:'咖哩拉麵', price:160,image: ramen3, },
+            {id:4, name:'特製拉麵', price:220,image: ramen4, },
         ]);
     
     const store = useCartStore();
